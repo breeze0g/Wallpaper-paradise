@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import MobileMenu from './MobileMenu';
-import './Premium.css';
+
 
 function Premium() {
   const [searchTerm, setSearchTerm] = useState('');
