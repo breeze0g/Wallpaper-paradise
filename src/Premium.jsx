@@ -1,40 +1,49 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import MobileMenu from './MobileMenu';
+import './Premium.css';
 
-function Wallpapers() {
+function Premium() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedImage, setSelectedImage] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Navigation links for mobile menu
-  const navLinks = [
-    { name: 'Start', path: '/' },
-    { name: 'Wallpapers', path: '/Wallpapers' },
-    { name: 'About', path: '/About' },
-    { name: 'Contact', path: '/Contact' }
-  ];
-
-  // All your wallpapers
-  const wallpapers = [
-    { id: 1, src: "/boy.png", name: "Boy Art", category: "Anime", resolution: "4K", downloads: "12.5K" },
-    { id: 2, src: "/dabi.jpg", name: "Dabi", category: "Anime", resolution: "4K", downloads: "8.2K" },
-    { id: 3, src: "/gut.png", name: "Guts", category: "Anime", resolution: "4K", downloads: "15.3K" },
-    { id: 4, src: "/miles.png", name: "Miles Morales", category: "Gaming", resolution: "4K", downloads: "10.7K" },
-    { id: 5, src: "/sasuke.jpg", name: "Sasuke", category: "Anime", resolution: "HD", downloads: "9.8K" },
+  // Premium wallpapers collection
+  const premiumWallpapers = [
+    { id: 1, src: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=600", name: "Mystic Forest", category: "Nature", resolution: "4K", downloads: "25.5K", premium: true },
+    { id: 2, src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600", name: "Mountain Peak", category: "Nature", resolution: "4K", downloads: "18.2K", premium: true },
+    { id: 3, src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600", name: "Sunset Valley", category: "Nature", resolution: "4K", downloads: "32.1K", premium: true },
+    { id: 4, src: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=600", name: "Northern Lights", category: "Nature", resolution: "4K", downloads: "42.8K", premium: true },
+    { id: 5, src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600", name: "Ocean Waves", category: "Nature", resolution: "4K", downloads: "15.3K", premium: true },
+    { id: 6, src: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600", name: "Lake Reflection", category: "Nature", resolution: "4K", downloads: "22.7K", premium: true },
+    { id: 7, src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600", name: "Autumn Path", category: "Nature", resolution: "4K", downloads: "19.4K", premium: true },
+    { id: 8, src: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600", name: "Desert Dunes", category: "Nature", resolution: "4K", downloads: "11.9K", premium: true },
+    { id: 9, src: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600", name: "Waterfall Dreams", category: "Nature", resolution: "4K", downloads: "28.3K", premium: true },
+    { id: 10, src: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600", name: "Majestic Canyon", category: "Nature", resolution: "4K", downloads: "31.6K", premium: true },
+    { id: 11, src: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600", name: "Tranquil Lake", category: "Nature", resolution: "4K", downloads: "14.2K", premium: true },
+    { id: 12, src: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=600", name: "Starry Night", category: "Abstract", resolution: "4K", downloads: "45.1K", premium: true },
   ];
 
   // Get unique categories
-  const categories = ['All', ...new Set(wallpapers.map(w => w.category))];
+  const categories = ['All', ...new Set(premiumWallpapers.map(w => w.category))];
 
   // Filter wallpapers based on search and category
-  const filteredWallpapers = wallpapers.filter(wallpaper => {
+  const filteredWallpapers = premiumWallpapers.filter(wallpaper => {
     const matchesSearch = wallpaper.name.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'All' || wallpaper.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
+
+  // Navigation links for mobile menu
+  const navLinks = [
+    { name: 'Start', path: '/' },
+    { name: 'Wallpapers', path: '/Wallpapers' },
+    { name: 'Premium', path: '/Premium' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' }
+  ];
 
   // Function to handle download
   const handleDownload = async (imageSrc, imageName) => {
@@ -102,22 +111,29 @@ function Wallpapers() {
   };
 
   return (
-    <div className="home-container">
-      {/* Desktop Navigation Links - RIGHT TOP CORNER */}
-      <div className="home-nav-links desktop-nav">
+    <div className="premium-container">
+      {/* Desktop Navigation Links */}
+      <div className="premium-nav-links desktop-nav">
         <Link to="/">Start</Link>
         <Link to="/Wallpapers">Wallpapers</Link>
-        <Link to="/About">About</Link>
-        <Link to="/Contact">Contact</Link>
+        <Link to="/Premium">Premium</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
       </div>
 
-      {/* Mobile Menu - Hamburger Icon */}
+      {/* Mobile Menu */}
       <MobileMenu links={navLinks} />
 
-      {/* Hero Section */}
-      <div className="home-hero">
-        <h1>Wallpaper Gallery</h1>
-        <p>Discover and download stunning wallpapers</p>
+      {/* Premium Hero Section */}
+      <div className="premium-hero">
+        <div className="premium-badge">✨ PREMIUM COLLECTION ✨</div>
+        <h1>Exclusive 4K Wallpapers</h1>
+        <p>Curated collection of the most stunning high-resolution wallpapers</p>
+        <div className="premium-stats">
+          <span>📸 500+ Premium Images</span>
+          <span>⭐ 4.9 Rating</span>
+          <span>💎 100% Curated</span>
+        </div>
       </div>
 
       {/* Search and Filter Section */}
@@ -125,7 +141,7 @@ function Wallpapers() {
         <div className="search-bar">
           <input
             type="text"
-            placeholder="🔍 Search wallpapers..."
+            placeholder="🔍 Search premium wallpapers..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -144,14 +160,15 @@ function Wallpapers() {
         </div>
       </div>
 
-      {/* Wallpaper Grid - 4 per row */}
-      <div className="wallpaper-grid">
+      {/* Premium Wallpaper Grid */}
+      <div className="premium-grid">
         {filteredWallpapers.map((wallpaper, index) => (
-          <div key={wallpaper.id} className="wallpaper-card">
+          <div key={wallpaper.id} className="premium-card">
+            <div className="card-badge">⭐ PREMIUM</div>
             <div className="card-image" onClick={() => openModal(wallpaper, index)}>
               <img src={wallpaper.src} alt={wallpaper.name} />
               <div className="image-overlay">
-                <span className="view-icon">👁️ View</span>
+                <span className="view-icon">👁️ Preview</span>
               </div>
             </div>
             <div className="card-info">
@@ -162,10 +179,10 @@ function Wallpapers() {
                 <span className="downloads">⬇️ {wallpaper.downloads}</span>
               </div>
               <button 
-                className="download-btn"
+                className="download-btn premium-btn"
                 onClick={() => handleDownload(wallpaper.src, wallpaper.name)}
               >
-                📥 Download
+                💎 Download Premium
               </button>
             </div>
           </div>
@@ -175,7 +192,7 @@ function Wallpapers() {
       {/* No results message */}
       {filteredWallpapers.length === 0 && (
         <div className="no-results">
-          <p>No wallpapers found. Try a different search!</p>
+          <p>No premium wallpapers found. Try a different search!</p>
         </div>
       )}
 
@@ -185,28 +202,21 @@ function Wallpapers() {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={closeModal}>✕</button>
             
-            {/* Previous Arrow */}
             {currentIndex > 0 && (
-              <button className="modal-nav modal-prev" onClick={goToPrevious}>
-                ‹
-              </button>
+              <button className="modal-nav modal-prev" onClick={goToPrevious}>‹</button>
             )}
             
-            {/* Next Arrow */}
             {currentIndex < filteredWallpapers.length - 1 && (
-              <button className="modal-nav modal-next" onClick={goToNext}>
-                ›
-              </button>
+              <button className="modal-nav modal-next" onClick={goToNext}>›</button>
             )}
             
             <img src={selectedImage.src} alt={selectedImage.name} />
             
             <div className="modal-info">
+              <div className="premium-tag">⭐ PREMIUM QUALITY ⭐</div>
               <h2>{selectedImage.name}</h2>
               <p>Category: {selectedImage.category} | Resolution: {selectedImage.resolution}</p>
-              <p className="image-counter">
-                {currentIndex + 1} / {filteredWallpapers.length}
-              </p>
+              <p className="image-counter">{currentIndex + 1} / {filteredWallpapers.length}</p>
               <button 
                 className="modal-download-btn"
                 onClick={() => {
@@ -214,19 +224,19 @@ function Wallpapers() {
                   closeModal();
                 }}
               >
-                📥 Download Now
+                💎 Download Premium Wallpaper
               </button>
             </div>
           </div>
         </div>
       )}
 
-      {/* Footer - Same as Home */}
+      {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>Wallpaper Paradise</h3>
-            <p>Your ultimate destination for stunning HD wallpapers</p>
+            <h3>Wallpaper Paradise Premium</h3>
+            <p>Exclusive 4K wallpapers for true enthusiasts</p>
             <div className="social-links">
               <a href="#">📘</a>
               <a href="#">📷</a>
@@ -240,26 +250,26 @@ function Wallpapers() {
             <ul>
               <li><Link to="/">Start</Link></li>
               <li><Link to="/Wallpapers">Wallpapers</Link></li>
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/contact">Contact Us</Link></li>
+              <li><Link to="/Premium">Premium</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
               <li><Link to="/support">Support</Link></li>
-              <li><Link to="/premium">Premium</Link></li>
             </ul>
           </div>
           
           <div className="footer-section">
             <h4>Categories</h4>
             <ul>
-              <li><a href="#">Anime</a></li>
               <li><a href="#">Nature</a></li>
-              <li><a href="#">Gaming</a></li>
               <li><a href="#">Abstract</a></li>
+              <li><a href="#">City</a></li>
+              <li><a href="#">Space</a></li>
             </ul>
           </div>
           
           <div className="footer-section">
             <h4>Newsletter</h4>
-            <p>Get latest wallpapers directly to your inbox</p>
+            <p>Get premium wallpapers directly to your inbox</p>
             <div className="newsletter">
               <input type="email" placeholder="Your email" />
               <button>Subscribe</button>
@@ -268,11 +278,11 @@ function Wallpapers() {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; 2026 Wallpaper Paradise. All rights reserved.</p>
+          <p>&copy; 2026 Wallpaper Paradise Premium. All rights reserved.</p>
         </div>
       </footer>
     </div>
   );
 }
 
-export default Wallpapers;
+export default Premium;

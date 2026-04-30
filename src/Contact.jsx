@@ -27,10 +27,24 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    
+    // Your WhatsApp number (without + or spaces)
+    const phoneNumber = '254794475619'; // Replace with your WhatsApp number
+    
+    // Format the message for WhatsApp
+    const message = `*New Contact Form Submission*%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Message:* ${formData.message}`;
+    
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+    
+    // Show success message
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
+    
+    // Clear form
     setFormData({ name: '', email: '', message: '' });
   };
 
@@ -125,7 +139,7 @@ function Contact() {
             
             {submitted && (
               <div className="success-message">
-                ✓ Message sent successfully! We'll get back to you soon.
+                ✓ Redirecting to WhatsApp! Send your message there.
               </div>
             )}
           </form>

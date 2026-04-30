@@ -48,7 +48,30 @@ function About() {
         <div className="about-card">
           <div className="about-icon">❤️</div>
           <h2>Support & Growth</h2>
-          <p>Your support is our progress. Every download, every share, and every visit fuels our passion to create more amazing content just for you.</p>
+          <p>Your support is our progress. Every download, every share, and every visit fuels our passion to create more amazing content just for you., You can also Donate for support</p>
+          <Link to="/Support" style={{ 
+            textDecoration: 'none',
+            display: 'inline-block',
+            background: 'linear-gradient(135deg, #ff6b6b, #ffd89b)',
+            padding: '10px 25px',
+            borderRadius: '50px',
+            color: '#333',
+            fontWeight: 'bold',
+            fontSize: '14px',
+            marginTop: '15px',
+            transition: 'all 0.3s ease',
+            cursor: 'pointer'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = 'translateY(-2px)';
+            e.target.style.boxShadow = '0 5px 15px rgba(255, 107, 107, 0.4)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = 'translateY(0)';
+            e.target.style.boxShadow = 'none';
+          }}>
+            ❤️ Support Our Work
+          </Link>
         </div>
 
         <div className="about-card developer-card">
@@ -56,7 +79,32 @@ function About() {
           <h2>Designed & Developed</h2>
           <p>Designed and developed with passion by <strong className="developer-name">Bildad Mwita</strong></p>
           <div className="developer-badge">
-            <span>✨ Premium Quality ✨</span>
+            <Link to="/Premium" style={{ 
+              textDecoration: 'none',
+              display: 'inline-block'
+            }}>
+              <span style={{
+                background: 'linear-gradient(135deg, #ffd700, #ff8c00)',
+                padding: '8px 20px',
+                borderRadius: '50px',
+                fontSize: '14px',
+                fontWeight: 'bold',
+                color: '#333',
+                display: 'inline-block',
+                animation: 'pulse 2s infinite',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = 'translateY(-2px)';
+                e.target.style.boxShadow = '0 5px 15px rgba(255, 215, 0, 0.4)';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = 'translateY(0)';
+                e.target.style.boxShadow = 'none';
+              }}>
+                ✨ Download Premium Quality ✨
+              </span>
+            </Link>
           </div>
         </div>
       </div>
@@ -101,6 +149,8 @@ function About() {
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/Wallpapers">Wallpapers</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
+              <li><Link to="/support">Support</Link></li>
+              <li><Link to="/premium">Premium</Link></li>
             </ul>
           </div>
           

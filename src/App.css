@@ -1,4 +1,4 @@
-/* ============ GLOBAL STYLES ============ */
+/* ============ GLOBAL STYLES ============
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ============ HEADER STYLES ============ */
+/* ============ HEADER STYLES ============
 .header {
   position: relative;
   width: 100%;
@@ -844,4 +844,4 @@ body {
     font-size: 15px;
     padding: 10px 20px;
   }
-}
+}  

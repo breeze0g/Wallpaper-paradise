@@ -24,7 +24,24 @@ function Start() {
           <h1>Welcome to Wallpaper Paradise</h1>
           <p>Discover stunning wallpapers for every mood and style</p>
         </div>
+        {/* Moved Link OUTSIDE content div */}
+        <div style={{ position: 'relative', zIndex: 2, textAlign: 'center', marginTop: '-30px' }}>
+          <Link to="/Premium" style={{ 
+            textDecoration: 'none', 
+            display: 'inline-block',
+            background: 'linear-gradient(135deg, #ffd700, #ff8c00)',
+            padding: '12px 30px',
+            borderRadius: '50px',
+            color: '#333',
+            fontWeight: 'bold',
+            transition: '0.3s',
+
+          }}>
+            Click to Download Premium Quality
+          </Link>
+        </div>
       </div>
+      
 
       {/* Mobile Menu */}
       <MobileMenu links={navLinks} />
@@ -63,6 +80,8 @@ function Start() {
               <li><Link to="/Wallpapers">Wallpapers</Link></li>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/support">Support</Link></li>
+              <li><Link to="/premium">Premium</Link></li>
             </ul>
           </div>
           
