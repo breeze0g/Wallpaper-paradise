@@ -328,3 +328,520 @@ body {
     flex-direction: column;
   }
 }
+
+/* ============ MOBILE RESPONSIVE FIXES ============ */
+
+/* Base mobile styles */
+@media (max-width: 768px) {
+  /* Container padding */
+  .home-container, .about-container, .contact-container {
+    padding: 10px;
+    margin: 10px auto;
+  }
+
+  /* Header/Navigation */
+  .home-nav-links, .contact-nav-links {
+    position: relative;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .home-nav-links a, .contact-nav-links a {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  /* Hero Section */
+  .home-hero, .about-header, .contact-header {
+    padding: 40px 15px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .home-hero h1, .about-header h1, .contact-header h1 {
+    font-size: 28px !important;
+  }
+
+  .home-hero p, .about-header p, .contact-header p {
+    font-size: 14px !important;
+  }
+
+  /* Search Bar */
+  .search-bar input {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+
+  /* Category Filters */
+  .category-filters {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .category-btn {
+    padding: 6px 14px;
+    font-size: 11px;
+  }
+
+  /* Wallpaper Grid - 2 columns on tablets, 1 on mobile */
+  .wallpaper-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px;
+  }
+
+  /* Wallpaper Cards */
+  .wallpaper-card {
+    border-radius: 15px;
+  }
+
+  .card-image {
+    aspect-ratio: 3/4;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-info {
+    padding: 12px;
+  }
+
+  .card-info h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .card-details {
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .card-details span {
+    font-size: 9px;
+    padding: 3px 8px;
+  }
+
+  .download-btn {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  /* Modal for mobile */
+  .modal-content {
+    width: 95%;
+    max-width: 95%;
+    margin: 10px;
+  }
+
+  .modal-content img {
+    max-height: 50vh;
+  }
+
+  .modal-nav {
+    font-size: 30px;
+    width: 35px;
+    height: 50px;
+  }
+
+  .modal-prev {
+    left: 5px;
+  }
+
+  .modal-next {
+    right: 5px;
+  }
+
+  .modal-info h2 {
+    font-size: 18px;
+  }
+
+  .modal-info p {
+    font-size: 12px;
+  }
+
+  .modal-download-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+
+  /* About Page */
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-card {
+    padding: 25px 15px;
+  }
+
+  .about-card h2 {
+    font-size: 22px;
+  }
+
+  .about-card p {
+    font-size: 14px;
+  }
+
+  .about-icon {
+    font-size: 50px;
+  }
+
+  /* Stats Section */
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 25px 15px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+
+  /* Contact Page */
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contact-info-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .info-card {
+    min-width: calc(50% - 10px);
+    padding: 20px;
+  }
+
+  .info-card h3 {
+    font-size: 16px;
+  }
+
+  .info-card p {
+    font-size: 12px;
+  }
+
+  .contact-form-section {
+    padding: 25px 20px;
+  }
+
+  .contact-form-section h2 {
+    font-size: 24px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* Footer */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .footer-section h3 {
+    font-size: 20px;
+  }
+
+  .footer-section h4 {
+    font-size: 16px;
+  }
+
+  .footer-section p {
+    font-size: 12px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .newsletter {
+    flex-direction: column;
+  }
+
+  .newsletter button {
+    width: 100%;
+  }
+
+  .footer-bottom p {
+    font-size: 10px;
+  }
+
+  /* Back button */
+  .back-home-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Extra small devices (phones, 480px and down) */
+@media (max-width: 480px) {
+  /* 1 column grid for very small phones */
+  .wallpaper-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Make cards larger on mobile for better touch */
+  .wallpaper-card {
+    max-width: 100%;
+  }
+
+  .card-info h3 {
+    font-size: 16px;
+  }
+
+  .card-details span {
+    font-size: 10px;
+  }
+
+  /* Hero section */
+  .home-hero h1, .about-header h1, .contact-header h1 {
+    font-size: 24px !important;
+  }
+
+  /* Category filters scroll horizontally */
+  .category-filters {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    gap: 10px;
+  }
+
+  .category-btn {
+    white-space: nowrap;
+  }
+
+  /* Stats - 2 columns still works */
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  /* Contact info cards */
+  .info-card {
+    min-width: 100%;
+  }
+
+  /* Modal */
+  .modal-nav {
+    font-size: 25px;
+    width: 30px;
+    height: 45px;
+  }
+
+  .image-counter {
+    font-size: 11px;
+  }
+}
+
+/* Tablets (768px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .wallpaper-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .home-nav-links, .contact-nav-links {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Fix for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .wallpaper-card:hover {
+    transform: none;
+  }
+  
+  .download-btn:active {
+    transform: scale(0.98);
+  }
+  
+  .modal-nav:active {
+    background: rgba(255, 107, 107, 0.8);
+  }
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  button, 
+  .category-btn,
+  .download-btn,
+  .modal-download-btn,
+  .back-home-btn,
+  .nav-links a,
+  .home-nav-links a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-image {
+    cursor: pointer;
+  }
+}
+
+/* ============ HAMBURGER MENU STYLES - TRANSLUCENT BACKGROUND ============ */
+
+/* Hide mobile menu on desktop */
+.mobile-menu {
+  display: none;
+}
+
+/* Show mobile menu only on mobile/tablet */
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+  }
+
+  /* Hide desktop navigation on mobile */
+  .desktop-nav {
+    display: none !important;
+  }
+
+  /* Hamburger Icon - Translucent */
+  .hamburger {
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1001;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 6px 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .hamburger:hover {
+    background: rgba(255, 107, 107, 0.3);
+    border: 1px solid rgba(255, 107, 107, 0.5);
+  }
+
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Animated hamburger when open */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Dropdown Menu - Translucent background */
+  .mobile-dropdown {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: auto;
+    max-height: 100vh;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    animation: slideInRight 0.3s ease;
+    border-radius: 0 0 0 20px;
+    box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .mobile-dropdown-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 70px 20px 30px 20px;
+  }
+
+  .mobile-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+    text-align: left;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-link:hover {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.8), rgba(255, 216, 155, 0.8));
+    transform: translateX(-5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+/* For very small phones */
+@media (max-width: 480px) {
+  .mobile-dropdown {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+  }
+  
+  .mobile-link {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}

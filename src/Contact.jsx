@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import MobileMenu from './MobileMenu';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -8,6 +9,14 @@ function Contact() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+
+  // Navigation links for mobile menu
+  const navLinks = [
+    { name: 'Start', path: '/' },
+    { name: 'Wallpapers', path: '/Wallpapers' },
+    { name: 'About', path: '/About' },
+    { name: 'Contact', path: '/Contact' }
+  ];
 
   const handleChange = (e) => {
     setFormData({
@@ -27,13 +36,16 @@ function Contact() {
 
   return (
     <div className="contact-container">
-      {/* Navigation Links - Right Top Corner */}
-      <div className="contact-nav-links">
+      {/* Desktop Navigation Links - Right Top Corner */}
+      <div className="contact-nav-links desktop-nav">
         <Link to="/">Start</Link>
         <Link to="/Wallpapers">Wallpapers</Link>
         <Link to="/About">About</Link>
         <Link to="/Contact">Contact</Link>
       </div>
+
+      {/* Mobile Menu - Hamburger Icon */}
+      <MobileMenu links={navLinks} />
 
       {/* Contact Header */}
       <div className="contact-header">

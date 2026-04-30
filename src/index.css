@@ -1762,3 +1762,182 @@ body {
     height: 50px;
   }
 }
+
+/* mobile */
+
+/* Fix header on mobile */
+@media (max-width: 768px) {
+  .header {
+    min-height: 300px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .content {
+    padding: 80px 15px 50px !important;
+  }
+
+  .content h1 {
+    font-size: 24px !important;
+  }
+
+  .content p {
+    font-size: 14px !important;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    gap: 8px;
+    padding: 6px 12px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}
+
+/* Gallery container fix */
+@media (max-width: 768px) {
+  .gallery {
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .gallery img {
+    width: 200px;
+    height: 280px;
+  }
+}
+
+/* ============ FIX START PAGE HEADER ON MOBILE ============ */
+
+/* Mobile header fixes */
+@media (max-width: 768px) {
+  /* Header container */
+  .header {
+    min-height: 350px !important;
+    margin-bottom: 30px !important;
+    border-radius: 1.5em !important;
+  }
+
+  /* Content positioning */
+  .content {
+    padding: 100px 15px 60px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 300px;
+  }
+
+  .content h1 {
+    font-size: 28px !important;
+    line-height: 1.3;
+    max-width: 90%;
+  }
+
+  .content p {
+    font-size: 14px !important;
+    max-width: 90%;
+  }
+
+  /* Navigation links - Keep at top right but smaller */
+  .nav-links {
+    position: absolute !important;
+    top: 15px !important;
+    right: 15px !important;
+    left: auto !important;
+    gap: 8px !important;
+    padding: 8px 15px !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    border-radius: 40px !important;
+    z-index: 100 !important;
+  }
+
+  .nav-links a {
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .header {
+    min-height: 300px !important;
+  }
+
+  .content {
+    padding: 80px 12px 50px !important;
+  }
+
+  .content h1 {
+    font-size: 24px !important;
+  }
+
+  .content p {
+    font-size: 12px !important;
+  }
+
+  .nav-links {
+    top: 10px !important;
+    right: 10px !important;
+    gap: 5px !important;
+    padding: 6px 10px !important;
+  }
+
+  .nav-links a {
+    font-size: 9px !important;
+    padding: 3px 6px !important;
+  }
+
+  .oledgallery h1 {
+    font-size: 28px !important;
+  }
+
+  .gallery {
+    gap: 10px !important;
+    padding: 12px !important;
+  }
+
+  .gallery img {
+    width: 160px !important;
+    height: 240px !important;
+  }
+}
+
+/* Tablet landscape */
+@media (min-width: 481px) and (max-width: 768px) {
+  .gallery img {
+    width: 220px !important;
+    height: 320px !important;
+  }
+  
+  .content h1 {
+    font-size: 32px !important;
+  }
+}
+
+/* Ensure OLED gallery title is centered and visible */
+.oledgallery {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.oledgallery h1 {
+  font-size: 42px;
+}
+
+@media (max-width: 768px) {
+  .oledgallery {
+    padding: 20px 15px;
+  }
+  
+  .oledgallery h1 {
+    font-size: 32px !important;
+  }
+}
+
+

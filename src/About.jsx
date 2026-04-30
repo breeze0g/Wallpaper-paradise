@@ -1,8 +1,27 @@
 import { Link } from 'react-router-dom';
+import MobileMenu from './MobileMenu';
 
 function About() {
+  // Navigation links for mobile menu
+  const navLinks = [
+    { name: 'Start', path: '/' },
+    { name: 'Wallpapers', path: '/Wallpapers' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' }
+  ];
+
   return (
     <div className="about-container">
+      {/* Desktop Navigation Links */}
+      <div className="home-nav-links desktop-nav">
+        <Link to="/">Start</Link>
+        <Link to="/Wallpapers">Wallpapers</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+      </div>
+
+      {/* Mobile Menu - Hamburger Icon */}
+      <MobileMenu links={navLinks} />
   
       <Link to="/" className="back-home-btn">
         ← Back to Home
@@ -11,13 +30,6 @@ function About() {
       <div className="about-header">
         <h1>About Us</h1>
         <p>Meet the passion behind the pixels</p>
-      </div>
-
-       <div className="home-nav-links">
-        <Link to="/">Start</Link>
-        <Link to="/Wallpapers">Wallpapers</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
       </div>
       
       <div className="about-content">
@@ -69,7 +81,7 @@ function About() {
         </div>
       </div>
 
-            <footer className="footer">
+      <footer className="footer">
         <div className="footer-content">
           <div className="footer-section">
             <h3>Wallpaper Paradise</h3>
@@ -101,22 +113,12 @@ function About() {
               <li><a href="#">Abstract</a></li>
             </ul>
           </div>
-          
-          {/* <div className="footer-section">
-            <h4>Newsletter</h4>
-            <p>Get latest wallpapers directly to your inbox</p>
-            <div className="newsletter">
-              <input type="email" placeholder="Your email" />
-              <button>Subscribe</button>
-            </div>
-          </div> */}
         </div>
         
         <div className="footer-bottom">
           <p>&copy; 2026 Wallpaper Paradise. All rights reserved.</p>
         </div>
       </footer>
-
     </div>
   );
 }

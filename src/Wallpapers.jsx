@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import MobileMenu from './MobileMenu';
 
 function Wallpapers() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -7,6 +8,14 @@ function Wallpapers() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Navigation links for mobile menu
+  const navLinks = [
+    { name: 'Start', path: '/' },
+    { name: 'Wallpapers', path: '/Wallpapers' },
+    { name: 'About', path: '/About' },
+    { name: 'Contact', path: '/Contact' }
+  ];
 
   // All your wallpapers
   const wallpapers = [
@@ -94,13 +103,16 @@ function Wallpapers() {
 
   return (
     <div className="home-container">
-      {/* Navigation Links - RIGHT TOP CORNER */}
-      <div className="home-nav-links">
+      {/* Desktop Navigation Links - RIGHT TOP CORNER */}
+      <div className="home-nav-links desktop-nav">
         <Link to="/">Start</Link>
         <Link to="/Wallpapers">Wallpapers</Link>
         <Link to="/About">About</Link>
         <Link to="/Contact">Contact</Link>
       </div>
+
+      {/* Mobile Menu - Hamburger Icon */}
+      <MobileMenu links={navLinks} />
 
       {/* Hero Section */}
       <div className="home-hero">
@@ -209,7 +221,7 @@ function Wallpapers() {
         </div>
       )}
 
-          {/* Footer - Same as Home */}
+      {/* Footer - Same as Home */}
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-section">

@@ -1,11 +1,20 @@
 import { Link } from 'react-router-dom';
+import MobileMenu from './MobileMenu';
 
 function Start() {
+  // Navigation links for mobile menu
+  const navLinks = [
+    { name: 'Start', path: '/' },
+    { name: 'Wallpapers', path: '/Wallpapers' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' }
+  ];
+
   return (
     <div>
-      {/* Header with background image */}
+      {/* Header Section */}
       <div className="header">
-        <div className="nav-links">
+        <div className="nav-links desktop-nav">
           <Link to="/">Start</Link>
           <Link to="/Wallpapers">Wallpapers</Link>
           <Link to="/about">About</Link>
@@ -16,16 +25,21 @@ function Start() {
           <p>Discover stunning wallpapers for every mood and style</p>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      <MobileMenu links={navLinks} />
       
+      {/* OLED Gallery Section */}
       <div className="oledgallery">
-        <h1>Oled Gallery Display</h1>
+        <h1>Oled Display</h1>
       </div>
      
+      {/* Gallery Images */}
       <div className="gallery">
-        <img src="boy.png" alt="boy" />
-        <img src="dabi.jpg" alt="dabi" />
-        <img src="miles.png" alt="miles" />
-        <img src="sasuke.jpg" alt="sasuke" />
+        <img src="/boy.png" alt="boy" />
+        <img src="/dabi.jpg" alt="dabi" />
+        <img src="/miles.png" alt="miles" />
+        <img src="/sasuke.jpg" alt="sasuke" />
       </div>
 
       {/* Footer Section */}
