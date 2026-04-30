@@ -56,7 +56,7 @@ function About() {
           <h2>Designed & Developed</h2>
           <p>Designed and developed with passion by <strong className="developer-name">Bildad Mwita</strong></p>
           <div className="developer-badge">
-            <span>&hearts;</span>
+            <span>✨ Premium Quality ✨</span>
           </div>
         </div>
       </div>
